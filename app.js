@@ -80,7 +80,6 @@
       cv.height = Math.round(H * dpr);
       x.setTransform(dpr, 0, 0, dpr, 0, 0);
       x.textBaseline = 'middle';
-      if (reduce) { place(); staticFrame(); }
     }
     resize();
     window.addEventListener('resize', resize);
@@ -187,6 +186,7 @@
     if (reduce) {
       window.__heroAnimating = false;
       staticFrame();
+      window.addEventListener('resize', staticFrame);
       return;
     }
     /* pause when hero off-screen */
