@@ -2,12 +2,11 @@
   "name": "saideepreddy91.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "playwright.config.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test"
   },
   "repository": {
     "type": "git",

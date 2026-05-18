@@ -15,9 +15,9 @@
   links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
   var spy = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) {
+      if (e.isIntersecting && byId[e.target.id]) {
         links.forEach(function (l) { l.classList.remove('active'); });
-        if (byId[e.target.id]) byId[e.target.id].classList.add('active');
+        byId[e.target.id].classList.add('active');
       }
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
@@ -33,11 +33,13 @@
     mMenu.classList.add('open');
     mBtn.setAttribute('aria-expanded', 'true');
     mBtn.setAttribute('aria-label', 'Close menu');
+    var first = mMenu.querySelector('a'); if (first) first.focus();
   }
   function closeMenu() {
     mMenu.classList.remove('open');
     mBtn.setAttribute('aria-expanded', 'false');
     mBtn.setAttribute('aria-label', 'Open menu');
+    mBtn.focus();
   }
   mBtn.addEventListener('click', openMenu);
   mClose.addEventListener('click', closeMenu);
