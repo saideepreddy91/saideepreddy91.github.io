@@ -99,7 +99,7 @@
       L(0.66, [0.30, 0.70], 'planner', 'middle', -14),
       L(0.77, [0.16, 0.40, 0.60, 0.84], 'agent', 'middle', -14),
       L(0.88, [0.34, 0.66], 'tool', 'middle', 17),
-      L(0.965, [0.5], 'aggregate', 'start', 5)
+      L(0.92, [0.5], 'aggregate', 'middle', 18)
     ];
     var edges = [];
     for (var i = 0; i < layers.length - 1; i++) {
@@ -125,10 +125,10 @@
             layers[i].forEach(function (a) {
               a.glow = 1;
               layers[i + 1].forEach(function (b) {
-                pulses.push({ a: a, b: b, t: 0, s: 0.02 });
+                pulses.push({ a: a, b: b, t: 0, s: 0.035 });
               });
             });
-          }, i * 260);
+          }, i * 160);
         })(i);
       }
     }
@@ -160,7 +160,7 @@
       edges.forEach(function (e) {
         x.beginPath(); x.moveTo(e.a.x, e.a.y); x.lineTo(e.b.x, e.b.y); x.stroke();
       });
-      if (++timer > 170) { timer = 0; cycle(); }
+      if (++timer > 95) { timer = 0; cycle(); }
       pulses.forEach(function (p) {
         p.t += p.s;
         var px = p.a.x + (p.b.x - p.a.x) * p.t;
