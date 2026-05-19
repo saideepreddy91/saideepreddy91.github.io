@@ -1,0 +1,25 @@
+{
+  "name": "saideepreddy91.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saideepreddy91/saideepreddy91.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saideepreddy91/saideepreddy91.github.io/issues"
+  },
+  "homepage": "https://github.com/saideepreddy91/saideepreddy91.github.io#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}
